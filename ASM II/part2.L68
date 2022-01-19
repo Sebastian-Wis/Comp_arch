@@ -1,0 +1,30 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 19/01/2022 16:11:00
+
+00001000                             1      ORG    $1000
+00001000                             2  START:               
+00001000                             3  
+00001000  45F9 00001018              4      LEA     health, A2  ;LOADS HEALTH INTO A2
+00001006  320A                       5      MOVE    A2, D1      ;MOVES A2 TO D1
+00001008  5A41                       6      ADD     #5, D1      ;ADDS #5 TO D1    
+0000100A  5B41                       7      SUB     #5, D1      ;SUBTRACTS #5 FROM D1
+0000100C  C2FC 0002                  8      MULU    #2, D1      ;MULTIPLES D1 BY #2 
+00001010  82FC 0002                  9      DIVU    #2, D1      ;DIVIDES D1 BY #2
+00001014                            10      
+00001014  FFFF FFFF                 11      SIMHALT            
+00001018                            12  
+00001018                            13  
+00001018= 10                        14  health dc.b $10
+00001019                            15  
+00001019                            16      END    START 
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+HEALTH              1018
+START               1000
