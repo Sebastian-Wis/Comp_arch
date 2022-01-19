@@ -1,0 +1,43 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 19/01/2022 15:56:37
+
+00001000                             1      ORG    $1000
+00001000                             2  START:                  
+00001000                             3  
+00001000  43F9 0000102C              4          lea     firstMsg, a1        Display Message
+00001006  303C 000E                  5          move    #14, d0
+0000100A  4E4F                       6          trap    #15
+0000100C                             7  
+0000100C  303C 0004                  8          move    #4, d0              
+00001010  4E4F                       9          trap    #15
+00001012  31C1 2000                 10          move.w  d1, $2000
+00001016  43F9 00001043             11          lea     secondMsg, a1       Display Message
+0000101C  303C 000E                 12          move    #14, d0 
+00001020  4E4F                      13          trap    #15
+00001022  303C 0003                 14          move    #3, d0
+00001026  4E4F                      15          trap    #15
+00001028                            16          
+00001028  =0000000D                 17  CR EQU $0D
+00001028                            18  
+00001028  =0000000A                 19  LF EQU $0A
+00001028                            20  
+00001028  FFFF FFFF                 21      SIMHALT
+0000102C                            22  
+0000102C= 0D 0A 45 6E 74 65 ...     23  firstMsg dc.b CR,LF,'Enter Gamer Points',CR,LF,0
+00001043= 0D 0A 59 6F 75 72 ...     24  secondMsg dc.b CR,LF,'Your Gamer Points are:',CR,LF,0
+0000105E                            25  
+0000105E                            26          END     START       
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+CR                  D
+FIRSTMSG            102C
+LF                  A
+SECONDMSG           1043
+START               1000
